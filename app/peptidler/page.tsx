@@ -1,83 +1,59 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
-import { PeptideLibrary } from "@/components/peptide-library"
-import { tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
+import { MethodFooter } from "@/components/method/method-footer"
+import { MonographLibrary } from "@/components/method/monograph-library"
+import { monographs } from "@/lib/monographs"
 
 export const metadata: Metadata = {
-  title: "Peptid Kütüphanesi",
+  title: "Monograflar",
   description:
-    "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
-  alternates: {
-    canonical: "/peptidler",
-  },
+    "Sinyal moleküllerinden oluşan seçilmiş bir sözlük. Her kayıt molekülü sade bir dille sunar: sınıflandırma, dizilim, yarı ömür ve uygulama yolu.",
+  alternates: { canonical: "/peptidler" },
   openGraph: {
-    title: "Peptid Kütüphanesi",
+    title: "Monograflar",
     description:
-      "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+      "Sinyal moleküllerinden oluşan seçilmiş bir sözlük. Her kayıt molekülü sade bir dille sunar.",
     url: "/peptidler",
   },
 }
 
-export default function PeptidlerPage() {
+export default function MonographsPage() {
   return (
     <>
       <Nav />
       <main id="main-content" className="bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-6xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Kütüphane
-              </p>
-            </div>
-
-            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
-              Peptid Kütüphanesi
+            <p className="eyebrow-label">Kütüphane</p>
+            <h1 className="mt-6 max-w-3xl font-serif text-5xl font-normal leading-[1.05] tracking-tight text-foreground sm:text-7xl">
+              Sinyal moleküllerinden oluşan seçilmiş bir{" "}
+              <span className="serif-accent">sözlük</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Her bileşik, kanıt seviyesine göre sınıflandırılmıştır. Bu ayrım,
-              markanın temel ilkesidir: kanıtlanmış olanı spekülatif olandan
-              asla ayırmadan sunmayız.
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
+              {monographs.length} monograf. Her kayıt molekülü sade bir dille
+              sunar: nedir, nasıl sınıflandırılır, dizilimi, yarı ömrü ve
+              uygulama yolu. Hiçbir şey vaat etmeyiz; ama her şeyi anlamanız için
+              çeviririz. ÆTERNA peptid satmaz.
             </p>
-
-            {/* Evidence Score legend */}
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
-              {(["proven", "theoretical", "preclinical"] as const).map((t) => (
-                <div key={t} className="flex items-center gap-2">
-                  <span
-                    aria-hidden="true"
-                    className={`font-mono text-xs ${tierColorVar[t]}`}
-                  >
-                    {tierDots[t]}
-                  </span>
-                  <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
-                    {tierLabel[t]}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
-        <PeptideLibrary />
+        <MonographLibrary />
 
-        {/* CTA back to consulting */}
         <section className="px-6 pb-28 text-center sm:pb-36">
           <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-normal italic leading-relaxed text-foreground/90 sm:text-3xl">
             Hangi bileşiğin sizin için doğru olduğunu birlikte belirleriz.
           </p>
           <Link
             href="/#danismanlik"
-            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+            className="mt-10 inline-block rounded-full border border-gold/60 px-9 py-3.5 text-sm text-gold transition-colors hover:bg-gold hover:text-primary-foreground"
           >
-            Danışmanlığı İncele
+            Danışmanlığı incele
           </Link>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }
