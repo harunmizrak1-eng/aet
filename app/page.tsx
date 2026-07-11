@@ -9,7 +9,7 @@ import { Process } from "@/components/process"
 import { MethodProtocols } from "@/components/method/method-protocols"
 import { CaseStudies } from "@/components/case-studies"
 import { MethodJournal } from "@/components/method/method-journal"
-import { MethodAccess } from "@/components/method/method-access"
+import { Offerings } from "@/components/offerings"
 import { MethodFaq } from "@/components/method/method-faq"
 import { MethodEnroll } from "@/components/method/method-enroll"
 import { MethodFooter } from "@/components/method/method-footer"
@@ -43,7 +43,9 @@ export default function Page() {
       <Reveal>
         <MethodJournal />
       </Reveal>
-      <MethodAccess />
+      <Reveal>
+        <Offerings />
+      </Reveal>
       <MethodFaq />
       <MethodEnroll />
       <MethodFooter />

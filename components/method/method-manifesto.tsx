@@ -27,12 +27,13 @@ export function MethodManifesto() {
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
-              Vücudunuzun zaten konuştuğu dilde bir{" "}
-              <span className="serif-accent">eğitim</span>.
+              Kanıt, <span className="serif-accent">protokolden</span> önce
+              gelir.
             </h2>
             <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-              Aeterna Method bir klinik değil, bir müfredattır. Reçete yazmaz,
-              ürün satmaz. Aydınlatır.
+              Aeterna, kanıta dayalı çalışan özel bir longevity kliniğidir. Her
+              öneri güncel literatüre dayanır; hiçbir protokol ölçmeden,
+              anlamadan kurulmaz.
             </p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
               Hücreleriniz durmadan iletişim kurar.{" "}

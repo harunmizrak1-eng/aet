@@ -52,7 +52,8 @@
   color-scheme: light;
   --background: #f4f1ea;
   --foreground: #1f221d;
-  --surface: #ffffff;
+  /* Warm ivory panel, never pure white — matches aeternamethod.com's bands. */
+  --surface: #ece6da;
   --gold: #8b4f2e;
   --hairline: rgba(31, 34, 29, 0.1);
   --tier-proven: #4b6e52;
@@ -66,9 +67,9 @@
   --serif-accent: #8b6f4e; /* warm brown for italic keywords in headlines */
   --eyebrow: #6b7566; /* muted olive for small mono labels */
 
-  --card: #ffffff;
+  --card: #ece6da;
   --card-foreground: #1f221d;
-  --popover: #ffffff;
+  --popover: #ece6da;
   --popover-foreground: #1f221d;
   --primary: #8b4f2e;
   --primary-foreground: #f4f1ea;
