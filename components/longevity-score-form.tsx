@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { scoreDimensions, computeScore } from "@/lib/longevity-score"
+import Link from "next/link"
+import { scoreDimensions, computeScore, scoreBand } from "@/lib/longevity-score"
 import { useAssessment } from "@/components/assessment"
 
 export function LongevityScoreForm() {
@@ -63,39 +64,92 @@ export function LongevityScoreForm() {
         Skoru Hesapla
       </button>
 
-      {submitted && (
-        <div className="mt-16 border-t border-hairline pt-14">
-          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-            Longevity Skorunuz
-          </p>
-          <p className="mt-4 font-mono text-7xl text-foreground sm:text-8xl">
-            {score}
-            <span className="text-2xl text-muted-foreground sm:text-3xl">
-              {" "}
-              / 100
-            </span>
-          </p>
+      {submitted && (() => {
+        const band = scoreBand(score)
+        const weakest = [...scoreDimensions]
+          .filter((d) => answers[d.id] !== undefined)
+          .sort((a, b) => answers[a.id] - answers[b.id])[0]
+        return (
+          <div className="mt-16 border-t border-hairline pt-14">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="eyebrow-label">Longevity Skorunuz</p>
+                <p className="mt-4 font-mono text-7xl text-foreground sm:text-8xl">
+                  {score}
+                  <span className="text-2xl text-muted-foreground sm:text-3xl">
+                    {" "}
+                    / 100
+                  </span>
+                </p>
+              </div>
+              <div className="sm:text-right">
+                <p className="font-serif text-3xl font-normal text-foreground">
+                  {band.label}
+                </p>
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground sm:ml-auto">
+                  {band.note}
+                </p>
+              </div>
+            </div>
 
-          <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
-            Bu skor, altı yaşam tarzı boyutunun basit ve eşit ağırlıklı
-            ortalamasıdır. Her boyut 0-100 arası puanlanır ve altısının
-            aritmetik ortalaması alınır. Herhangi bir gizli algoritma veya
-            klinik model kullanılmaz.
-          </p>
+            {/* Per-dimension breakdown */}
+            <div className="mt-12 flex flex-col gap-4">
+              {scoreDimensions.map((d) => {
+                const v = answers[d.id] ?? 0
+                return (
+                  <div key={d.id} className="flex items-center gap-4">
+                    <span className="w-28 shrink-0 text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground">
+                      {d.label}
+                    </span>
+                    <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-hairline">
+                      <span
+                        className="absolute inset-y-0 left-0 rounded-full bg-gold transition-[width] duration-700"
+                        style={{ width: `${v}%` }}
+                      />
+                    </span>
+                    <span className="w-8 shrink-0 text-right font-mono text-xs text-foreground/70">
+                      {v}
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
 
-          <p className="mt-6 max-w-lg text-balance font-serif text-lg font-normal italic leading-relaxed text-foreground/90">
-            Bu bir tahmindir; tıbbi teşhis veya öngörü değildir.
-          </p>
+            {/* Weakest-area recommendation */}
+            {weakest?.focus && (
+              <div className="mt-10 rounded-xl border border-hairline bg-surface p-6">
+                <p className="eyebrow-label">Öncelikli alan · {weakest.label}</p>
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                  En düşük puanı bu boyutta aldınız. En hızlı kazanç burada
+                  başlar.
+                </p>
+                <Link
+                  href={weakest.focus.href}
+                  className="mt-4 inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-eyebrow text-gold transition-opacity hover:opacity-70"
+                >
+                  {weakest.focus.label} →
+                </Link>
+              </div>
+            )}
 
-          <button
-            type="button"
-            onClick={() => open()}
-            className="mt-10 rounded-sm border border-hairline px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-foreground/80 transition-colors duration-300 hover:border-gold/60 hover:bg-gold hover:text-primary-foreground"
-          >
-            Sonucu Bir Uzmanla Değerlendir
-          </button>
-        </div>
-      )}
+            <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              Bu skor, altı yaşam tarzı boyutunun eşit ağırlıklı ortalamasıdır.
+              Gizli bir algoritma veya klinik model kullanılmaz.
+            </p>
+            <p className="mt-4 max-w-lg text-balance font-serif text-lg font-normal italic leading-relaxed text-foreground/90">
+              Bu bir tahmindir; tıbbi teşhis veya öngörü değildir.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => open()}
+              className="mt-10 rounded-full bg-foreground px-8 py-3.5 text-sm text-background transition-opacity hover:opacity-85"
+            >
+              Sonucu bir uzmanla değerlendir
+            </button>
+          </div>
+        )
+      })()}
     </div>
   )
 }
