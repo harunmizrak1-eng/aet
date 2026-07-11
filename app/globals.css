@@ -165,6 +165,84 @@ body::before {
   font-style: italic;
 }
 
+/* ---- Animated scientific line-art (matches aeternamethod.com's living
+   diagrams: flowing dashes, traveling dots, breathing nodes, shimmer) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  /* energy flowing along a signal line */
+  .dia-flow {
+    stroke-dasharray: 5 9;
+    animation: dia-flow 2.8s linear infinite;
+  }
+  .dia-flow-slow {
+    stroke-dasharray: 3 11;
+    animation: dia-flow 5.5s linear infinite;
+  }
+  /* line perpetually drawing itself */
+  .dia-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dia-draw 4s ease-in-out infinite alternate;
+  }
+  /* pulsing accent node */
+  .dia-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dia-pulse 2.6s ease-in-out infinite;
+  }
+  /* gentle breathing element (sun, moon, ligand, receptor) */
+  .dia-breathe {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dia-breathe 5s ease-in-out infinite;
+  }
+  /* fading shimmer for stacked strands */
+  .dia-shimmer {
+    animation: dia-shimmer 6s ease-in-out infinite;
+  }
+}
+@keyframes dia-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+@keyframes dia-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dia-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+@keyframes dia-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+@keyframes dia-shimmer {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
 /* Horizontal marquee (concern words in the strip below the hero) */
 .marquee {
   display: flex;

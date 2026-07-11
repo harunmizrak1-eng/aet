@@ -6,6 +6,27 @@ import { Footer } from "@/components/footer"
 import { Newsletter } from "@/components/newsletter"
 import { articles, getArticle } from "@/lib/articles"
 import { siteUrl, siteName } from "@/lib/site"
+import {
+  AmpkPathway,
+  Neurogenesis,
+  Angiogenesis,
+  CircadianRhythm,
+  PulsatileSecretion,
+  CollagenHelix,
+  ReceptorDiagram,
+} from "@/components/method/diagrams"
+import type { ComponentType } from "react"
+
+// Animated line-art per topic, used in place of heavy photography so every
+// article carries a living visual without feeling suffocating.
+const CATEGORY_DIAGRAM: Record<string, ComponentType<{ className?: string }>> = {
+  Metabolik: AmpkPathway,
+  Kognitif: Neurogenesis,
+  "Doku Onarımı": Angiogenesis,
+  Longevity: CircadianRhythm,
+  "Büyüme / GH": PulsatileSecretion,
+  "Estetik / Onarım": CollagenHelix,
+}
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
@@ -47,6 +68,8 @@ export default async function ArticlePage({
   const relatedByCategory = articles
     .filter((a) => a.category === article.category && a.slug !== article.slug)
     .slice(0, 3)
+
+  const Diagram = CATEGORY_DIAGRAM[article.category] ?? ReceptorDiagram
 
   return (
     <>
@@ -96,6 +119,10 @@ export default async function ArticlePage({
             <h1 className="mt-6 text-balance font-serif text-3xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
               {article.title}
             </h1>
+
+            <div className="mt-10 flex justify-center rounded-xl border border-hairline bg-surface px-6 py-10 text-foreground/70">
+              <Diagram className="h-auto w-full max-w-[300px]" />
+            </div>
 
             <div className="mt-12 flex flex-col gap-6">
               {article.body.map((para, i) => (
