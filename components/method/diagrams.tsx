@@ -2,7 +2,7 @@
  * Hand-drawn scientific line-art, matching the ÆTERNA method house style:
  * thin single-weight strokes, olive/brown ink, generous negative space.
  * Each diagram inherits color via currentColor so callers set the tone.
- * Decorative only — aria-hidden.
+ * Decorative only, aria-hidden.
  */
 
 const S = {

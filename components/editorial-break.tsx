@@ -16,7 +16,7 @@ const ALIGN_CLASSES: Record<NonNullable<EditorialBreakProps["align"]>, string> =
 }
 
 /**
- * Full-bleed photographic pause between content sections — the site's one
+ * Full-bleed photographic pause between content sections, the site's one
  * concession to pure feeling. No cards, no data, just a portrait and a
  * single line. Used sparingly (per AGENTS.md motion/visual restraint rules).
  */

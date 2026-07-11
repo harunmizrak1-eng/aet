@@ -28,7 +28,7 @@ export function MethodHero() {
         <p className="mt-8 max-w-xl text-pretty text-base leading-relaxed text-foreground/80 sm:text-lg">
           Aeterna Method, peptid bilimini uzun ömür, toparlanma ve dayanıklılık
           için tutarlı bir sisteme dönüştüren eğitim odaklı bir pratiktir.
-          Reçete yazmayız — okumayı öğretiriz.
+          Reçete yazmayız, okumayı öğretiriz.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">

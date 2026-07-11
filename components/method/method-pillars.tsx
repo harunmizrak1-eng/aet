@@ -22,7 +22,7 @@ interface Pillar {
 
 const PILLARS: Pillar[] = [
   {
-    index: "01 — Sütun",
+    index: "01 · Sütun",
     overline: "AMPK Yolağı",
     underline: "ATP · İnsülin duyarlılığı",
     title: "Enerji & metabolik yavaşlama",
@@ -32,7 +32,7 @@ const PILLARS: Pillar[] = [
     Diagram: AmpkPathway,
   },
   {
-    index: "02 — Sütun",
+    index: "02 · Sütun",
     overline: "BDNF · Sinaptik plastisite",
     underline: "Nörogenez",
     title: "Beyin sisi & bilişsel gerileme",
@@ -42,7 +42,7 @@ const PILLARS: Pillar[] = [
     Diagram: Neurogenesis,
   },
   {
-    index: "03 — Sütun",
+    index: "03 · Sütun",
     overline: "Doku onarım kaskadı",
     underline: "Anjiyogenez",
     title: "Kas kaybı & yavaş toparlanma",
@@ -52,7 +52,7 @@ const PILLARS: Pillar[] = [
     Diagram: Angiogenesis,
   },
   {
-    index: "04 — Sütun",
+    index: "04 · Sütun",
     overline: "Üçlü sarmal · Kolajen sentezi",
     underline: "Bağ dokusu bütünlüğü",
     title: "İnflamasyon & eklem sağlığı",
@@ -62,7 +62,7 @@ const PILLARS: Pillar[] = [
     Diagram: CollagenHelix,
   },
   {
-    index: "05 — Sütun",
+    index: "05 · Sütun",
     overline: "Sirkadiyen ritim · Melatonin",
     underline: "Pineal aks",
     title: "Uyku bozukluğu",
@@ -72,7 +72,7 @@ const PILLARS: Pillar[] = [
     Diagram: CircadianRhythm,
   },
   {
-    index: "06 — Sütun",
+    index: "06 · Sütun",
     overline: "Pulsatil salınım",
     underline: "GHRH / GH aksı",
     title: "Hormonal değişimler (E/K)",

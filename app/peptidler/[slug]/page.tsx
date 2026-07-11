@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
@@ -12,6 +13,7 @@ import {
   tierDots,
   categoryGoalMap,
 } from "@/lib/peptides"
+import { peptideImage } from "@/lib/peptide-images"
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
 import { lastContentReview } from "@/lib/site"
@@ -56,6 +58,7 @@ export default async function PeptideDetailPage({
     : undefined
   const goal = categoryGoalMap[peptide.category]
   const citation = citations[peptide.slug]
+  const image = peptideImage(peptide.slug)
 
   return (
     <>
@@ -69,6 +72,25 @@ export default async function PeptideDetailPage({
             >
               ← Peptid Kütüphanesi
             </Link>
+
+            {image && (
+              <figure className="mt-8 overflow-hidden rounded-xl border border-hairline bg-surface">
+                <div className="relative aspect-[3/2] w-full">
+                  <Image
+                    src={image}
+                    alt={`${peptide.name} · ÆTERNA referans görseli`}
+                    fill
+                    sizes="(min-width: 768px) 42rem, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <figcaption className="px-5 py-3 text-[0.62rem] uppercase tracking-eyebrow text-muted-foreground">
+                  ÆTERNA peptid satmaz · yalnızca araştırma amaçlı referans
+                  görsel
+                </figcaption>
+              </figure>
+            )}
 
             <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {peptide.category}

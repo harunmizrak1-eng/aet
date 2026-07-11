@@ -66,7 +66,7 @@ export function MethodLibrary() {
           </h2>
           <p className="max-w-md self-end text-base leading-relaxed text-[#f4f1ea]/70">
             Her kayıt molekülü sade bir dille sunar: nedir, nerede keşfedildi,
-            ne çalışıldı ve ne belirsiz kalıyor. Hiçbir şey vaat etmeyiz — ama
+            ne çalışıldı ve ne belirsiz kalıyor. Hiçbir şey vaat etmeyiz, ama
             her şeyi anlamanız için çeviririz.
           </p>
         </div>

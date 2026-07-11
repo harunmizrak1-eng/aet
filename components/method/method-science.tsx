@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 
 const STATS = [
   { value: "7000+", label: "incelenen hakemli çalışma" },
@@ -18,7 +17,7 @@ const TABS = [
       "Peptidler, vücudun ana sinyalleşme sözlüğünü oluşturan kısa amino asit zincirleridir. Vitaminler ve mineraller ham maddeyi sağlarken, peptidler orkestrayı yönetir.",
       "Aeterna'nın pedagojisi reseptörde başlar: bir peptid nasıl bağlanır ve hangi kaskadı tetikler. Mekanizma her zaman ilk derstir.",
     ],
-    ref: "Kaynak · Frøkjaer & Otzen — Nat. Rev. Drug Discov., 2005",
+    ref: "Kaynak · Frøkjaer & Otzen, Nat. Rev. Drug Discov., 2005",
   },
   {
     key: "Kanıt",
@@ -34,7 +33,7 @@ const TABS = [
     title: "Çalışmayı pratiğe bağlamak",
     body: [
       "Bir molekülün güçlü olması, herkes için doğru olduğu anlamına gelmez. Doz, süre, kaynak ve bireysel profil belirleyicidir.",
-      "Bu yüzden protokol her zaman kişiye özel kurulur — referans bir tablodan alınmaz.",
+      "Bu yüzden protokol her zaman kişiye özel kurulur, referans bir tablodan alınmaz.",
     ],
     ref: "Süreç · Değerlendirmeden protokole",
   },
@@ -43,17 +42,10 @@ const TABS = [
     title: "Bir ihtiyat standardı",
     body: [
       "Aeterna eğitim verir; teşhis, tedavi ya da reçete sunmaz. Güvenlik bileşene, bağlama, doza, kaynağa ve bireye bağlıdır.",
-      "Üyelerimize her değişkeni tek tek değerlendirmeyi öğretiriz — kestirme bir cevap yerine bir yargılama çerçevesi.",
+      "Üyelerimize her değişkeni tek tek değerlendirmeyi öğretiriz, kestirme bir cevap yerine bir yargılama çerçevesi.",
     ],
     ref: "Tıbbi & sağlık sorumluluk reddi",
   },
-]
-
-const GRID = [
-  { src: "/images/editorial/eye-macro.webp", ratio: "aspect-[3/4]" },
-  { src: "/images/editorial/sprint-dust.webp", ratio: "aspect-[3/4]" },
-  { src: "/images/editorial/pool-shoulder.webp", ratio: "aspect-[3/4]" },
-  { src: "/images/editorial/embrace-coast.webp", ratio: "aspect-[3/4]" },
 ]
 
 export function MethodScience() {
@@ -71,7 +63,7 @@ export function MethodScience() {
           </h2>
           <p className="max-w-md self-end text-base leading-relaxed text-muted-foreground">
             Aeterna, hakemli farmakoloji, endokrinoloji ve uzun ömür
-            araştırmalarından derlenen bir müfredattır — bu alanların hak
+            araştırmalarından derlenen bir müfredattır, bu alanların hak
             ettiği titizlik ve yeni başlayanların ihtiyaç duyduğu netlikle
             öğretilir.
           </p>
@@ -120,21 +112,6 @@ export function MethodScience() {
             ))}
             <p className="eyebrow-label mt-8">{active.ref}</p>
           </div>
-        </div>
-
-        {/* Editorial image grid */}
-        <div className="mt-16 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {GRID.map((g, i) => (
-            <div key={i} className={`relative ${g.ratio} overflow-hidden rounded-md`}>
-              <Image
-                src={g.src}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="editorial-photo object-cover"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </section>

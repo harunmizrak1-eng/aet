@@ -46,7 +46,7 @@ export function MethodAccess() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Guest — light card */}
+          {/* Guest, light card */}
           <article className="flex flex-col rounded-xl border border-hairline bg-surface p-8 sm:p-12">
             <h3 className="font-serif text-3xl font-normal text-foreground">
               Misafir <span className="serif-accent">okur</span>
@@ -72,7 +72,7 @@ export function MethodAccess() {
             </button>
           </article>
 
-          {/* Full member — dark card */}
+          {/* Full member, dark card */}
           <article className="flex flex-col rounded-xl bg-[#20221d] p-8 text-[#f4f1ea] sm:p-12">
             <h3 className="font-serif text-3xl font-normal">
               Tam <span className="serif-accent">üye</span>

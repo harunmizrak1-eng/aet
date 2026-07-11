@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ÆTERNA method theme: warm ivory, terracotta, Cormorant + DM Sans. This is
-   the site's one fixed visual identity (per method's production design) —
+   the site's one fixed visual identity (per method's production design)
    do not reintroduce the old dark/gold palette. */
 
 @theme inline {

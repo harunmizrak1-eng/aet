@@ -14,7 +14,7 @@ const PRINCIPLES = [
   {
     numeral: "III.",
     title: "Uzun ömür bir disiplindir",
-    line: "Uyku, antrenman, beslenme ve sinyalleşme — her biri katkıda bulunur. Bunları tek bir bağlı sistem olarak ele alırız, asla ayrı ayrı değil.",
+    line: "Uyku, antrenman, beslenme ve sinyalleşme, her biri katkıda bulunur. Bunları tek bir bağlı sistem olarak ele alırız, asla ayrı ayrı değil.",
   },
 ]
 
@@ -37,7 +37,7 @@ export function MethodManifesto() {
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
               Hücreleriniz durmadan iletişim kurar.{" "}
               <span className="serif-accent">Peptidler bu dilin kelimeleridir.</span>{" "}
-              Bizim işimiz bu konuşmayı okunur kılmak — böylece siz ve
+              Bizim işimiz bu konuşmayı okunur kılmak, böylece siz ve
               hekiminiz vücudunuzun ne söylediğini nihayet duyabilirsiniz.
             </p>
           </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import {
   peptides,
@@ -11,6 +12,7 @@ import {
   tierDots,
   type EvidenceTier,
 } from "@/lib/peptides"
+import { peptideImage } from "@/lib/peptide-images"
 
 const TIER_FILTERS: { value: EvidenceTier | "Tümü"; label: string }[] = [
   { value: "Tümü", label: "Tümü" },
@@ -91,8 +93,23 @@ export function PeptideLibrary() {
                 <Link
                   key={p.slug}
                   href={`/peptidler/${p.slug}`}
-                  className={`group flex flex-col rounded-sm border bg-surface p-8 transition-colors duration-500 hover:border-gold/60 ${tierBorderVar[p.tier]}`}
+                  className={`group flex flex-col overflow-hidden rounded-sm border bg-surface transition-colors duration-500 hover:border-gold/60 ${tierBorderVar[p.tier]}`}
                 >
+                  {(() => {
+                    const img = peptideImage(p.slug)
+                    return img ? (
+                      <div className="relative aspect-[3/2] w-full overflow-hidden border-b border-hairline">
+                        <Image
+                          src={img}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : null
+                  })()}
+                  <div className="flex flex-1 flex-col p-8">
                   <h2 className="font-serif text-2xl font-normal tracking-wide text-foreground">
                     {p.name}
                   </h2>
@@ -122,6 +139,7 @@ export function PeptideLibrary() {
                     <span className="text-[0.65rem] uppercase tracking-eyebrow text-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       İncele →
                     </span>
+                  </div>
                   </div>
                 </Link>
               ))}
