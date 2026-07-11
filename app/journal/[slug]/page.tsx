@@ -125,14 +125,23 @@ export default async function ArticlePage({
             </div>
 
             <div className="mt-12 flex flex-col gap-6">
-              {article.body.map((para, i) => (
-                <p
-                  key={i}
-                  className="text-base leading-relaxed text-foreground/85"
-                >
-                  {para}
-                </p>
-              ))}
+              {article.body.map((para, i) =>
+                para.startsWith("## ") ? (
+                  <h2
+                    key={i}
+                    className="mt-4 font-serif text-2xl font-normal leading-snug text-foreground sm:text-3xl"
+                  >
+                    {para.slice(3)}
+                  </h2>
+                ) : (
+                  <p
+                    key={i}
+                    className="text-base leading-relaxed text-foreground/85"
+                  >
+                    {para}
+                  </p>
+                ),
+              )}
             </div>
 
             {article.relatedLinks && article.relatedLinks.length > 0 && (
