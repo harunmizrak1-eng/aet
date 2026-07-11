@@ -3,8 +3,8 @@ import { contactEmail, instagramUrl, whatsappLink } from "@/lib/contact"
 
 const METHOD_LINKS = [
   { href: "/metodoloji", label: "Hakkımızda" },
-  { href: "/#uyelik", label: "Üye portalı" },
-  { href: "/#uyelik", label: "Tam üyelik için kayıt · Ücretsiz" },
+  { href: "/uye", label: "Üye portalı" },
+  { href: "/uye", label: "Tam üyelik için kayıt · Ücretsiz" },
 ]
 
 const LIBRARY_LINKS = [

@@ -1,6 +1,4 @@
-"use client"
-
-import { useAssessment } from "@/components/assessment"
+import Link from "next/link"
 
 const GUEST = [
   "Halka açık peptid sözlüğü (60+ kayıt)",
@@ -30,8 +28,6 @@ function Item({ children }: { children: React.ReactNode }) {
 }
 
 export function MethodAccess() {
-  const { open } = useAssessment()
-
   return (
     <section id="uyelik" className="border-b border-hairline px-6 py-24 sm:py-32 md:px-10">
       <div className="mx-auto max-w-6xl">
@@ -63,13 +59,12 @@ export function MethodAccess() {
                 <Item key={f}>{f}</Item>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={() => open()}
+            <Link
+              href="/uye"
               className="mt-10 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/30 px-6 py-3.5 text-sm text-foreground transition-colors hover:border-foreground/70"
             >
               Okumaya başla <span aria-hidden="true">→</span>
-            </button>
+            </Link>
           </article>
 
           {/* Full member, dark card */}
@@ -89,13 +84,12 @@ export function MethodAccess() {
                 <Item key={f}>{f}</Item>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={() => open()}
+            <Link
+              href="/uye"
               className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-[#f4f1ea] px-6 py-3.5 text-sm text-[#20221d] transition-opacity hover:opacity-85"
             >
               Üye ol <span aria-hidden="true">→</span>
-            </button>
+            </Link>
           </article>
         </div>
       </div>
