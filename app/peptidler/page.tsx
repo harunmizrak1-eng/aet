@@ -1,0 +1,83 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { Nav } from "@/components/nav"
+import { Footer } from "@/components/footer"
+import { PeptideLibrary } from "@/components/peptide-library"
+import { tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
+
+export const metadata: Metadata = {
+  title: "Peptid Kütüphanesi",
+  description:
+    "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+  alternates: {
+    canonical: "/peptidler",
+  },
+  openGraph: {
+    title: "Peptid Kütüphanesi",
+    description:
+      "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+    url: "/peptidler",
+  },
+}
+
+export default function PeptidlerPage() {
+  return (
+    <>
+      <Nav />
+      <main id="main-content" className="bg-background pt-32">
+        <section className="px-6 pb-16 md:px-10">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-4">
+              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
+              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+                Kütüphane
+              </p>
+            </div>
+
+            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+              Peptid Kütüphanesi
+            </h1>
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Her bileşik, kanıt seviyesine göre sınıflandırılmıştır. Bu ayrım,
+              markanın temel ilkesidir: kanıtlanmış olanı spekülatif olandan
+              asla ayırmadan sunmayız.
+            </p>
+
+            {/* Evidence Score legend */}
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+              {(["proven", "theoretical", "preclinical"] as const).map((t) => (
+                <div key={t} className="flex items-center gap-2">
+                  <span
+                    aria-hidden="true"
+                    className={`font-mono text-xs ${tierColorVar[t]}`}
+                  >
+                    {tierDots[t]}
+                  </span>
+                  <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                    {tierLabel[t]}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <PeptideLibrary />
+
+        {/* CTA back to consulting */}
+        <section className="px-6 pb-28 text-center sm:pb-36">
+          <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-light italic leading-relaxed text-foreground/90 sm:text-3xl">
+            Hangi bileşiğin sizin için doğru olduğunu birlikte belirleriz.
+          </p>
+          <Link
+            href="/#danismanlik"
+            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+          >
+            Danışmanlığı İncele
+          </Link>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
