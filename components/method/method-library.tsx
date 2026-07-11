@@ -60,7 +60,7 @@ export function MethodLibrary() {
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow-label">Kütüphane</p>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+          <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl">
             Sinyal moleküllerinden oluşan seçilmiş bir{" "}
             <span className="serif-accent">sözlük</span>.
           </h2>
@@ -92,7 +92,7 @@ export function MethodLibrary() {
 
           {/* Peptide table */}
           <div>
-            <h3 className="font-serif text-3xl font-light">{activeCat.label}</h3>
+            <h3 className="font-serif text-3xl font-normal">{activeCat.label}</h3>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#f4f1ea]/60">
               {activeCat.blurb}
             </p>

@@ -6,17 +6,19 @@ import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { contactEmail } from '@/lib/contact'
 import './globals.css'
 
+// Weights mirror aeternamethod.com's own font loading exactly:
+// Cormorant Garamond 400/500 (+italic), DM Sans 400/500/600, JetBrains Mono 400/500.
 const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500'],
   style: ['normal', 'italic'],
 })
 
 const dmSans = DM_Sans({
   variable: '--font-dm-sans',
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['400', '500', '600'],
 })
 
 const jetbrainsMono = JetBrains_Mono({

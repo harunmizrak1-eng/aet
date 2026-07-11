@@ -65,7 +65,7 @@ export function MethodScience() {
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow-label">Bilim</p>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
             <span className="serif-accent">Literatürü</span> öğretiriz,
             pazarlamayı değil.
           </h2>
@@ -81,7 +81,7 @@ export function MethodScience() {
         <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 border-y border-hairline py-12 lg:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.value}>
-              <p className="font-serif text-5xl font-light text-foreground sm:text-6xl">
+              <p className="font-serif text-5xl font-normal text-foreground sm:text-6xl">
                 {s.value}
               </p>
               <p className="mt-3 text-sm leading-snug text-muted-foreground">
@@ -110,7 +110,7 @@ export function MethodScience() {
             ))}
           </div>
           <div className="rounded-lg bg-[#ece7dc] p-8 sm:p-12">
-            <h3 className="font-serif text-3xl font-light text-foreground">
+            <h3 className="font-serif text-3xl font-normal text-foreground">
               {active.title}
             </h3>
             {active.body.map((para, i) => (

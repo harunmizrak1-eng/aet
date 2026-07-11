@@ -36,14 +36,14 @@ export function Trust() {
             </p>
           </div>
 
-          <h2 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+          <h2 className="mt-10 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
             Sessizce kazanılmış bir itibar.
           </h2>
 
           <div className="mt-14 flex gap-16">
             {STATS.map((s) => (
               <div key={s.label}>
-                <p className="font-serif text-5xl font-light text-foreground sm:text-6xl">
+                <p className="font-serif text-5xl font-normal text-foreground sm:text-6xl">
                   {s.value}
                 </p>
                 <p className="mt-3 text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground">
@@ -70,7 +70,7 @@ export function Trust() {
               key={q.label}
               className="rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
-              <blockquote className="font-serif text-xl font-light italic leading-relaxed text-foreground/90">
+              <blockquote className="font-serif text-xl font-normal italic leading-relaxed text-foreground/90">
                 {`“${q.quote}”`}
               </blockquote>
               <figcaption className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-gold">

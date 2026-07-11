@@ -56,7 +56,7 @@ export function JournalList({ articles }: { articles: Article[] }) {
                   {a.readMinutes} dk okuma
                 </span>
               </div>
-              <h2 className="mt-4 font-serif text-2xl font-light tracking-wide text-foreground transition-colors group-hover:text-gold sm:text-3xl">
+              <h2 className="mt-4 font-serif text-2xl font-normal tracking-wide text-foreground transition-colors group-hover:text-gold sm:text-3xl">
                 {a.title}
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">

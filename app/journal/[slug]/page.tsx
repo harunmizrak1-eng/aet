@@ -93,7 +93,7 @@ export default async function ArticlePage({
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-6 text-balance font-serif text-3xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
               {article.title}
             </h1>
 

@@ -28,7 +28,7 @@ export function WhyAeterna() {
           </p>
         </div>
 
-        <h2 className="mt-10 max-w-2xl text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
+        <h2 className="mt-10 max-w-2xl text-balance font-serif text-3xl font-normal leading-tight tracking-wide text-foreground sm:text-4xl">
           Bu sistemi güvenilir kılan şey.
         </h2>
 
@@ -38,7 +38,7 @@ export function WhyAeterna() {
               key={p.title}
               className="flex flex-col rounded-sm border border-hairline bg-surface p-8"
             >
-              <h3 className="font-serif text-2xl font-light tracking-wide text-foreground">
+              <h3 className="font-serif text-2xl font-normal tracking-wide text-foreground">
                 {p.title}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

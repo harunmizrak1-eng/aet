@@ -16,7 +16,7 @@ export function Newsletter() {
           <span aria-hidden="true" className="h-px w-8 bg-gold/70" />
         </div>
 
-        <h2 className="mt-8 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
+        <h2 className="mt-8 text-balance font-serif text-3xl font-normal leading-tight tracking-wide text-foreground sm:text-4xl">
           Süreci takip edin.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">

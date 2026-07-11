@@ -12,7 +12,7 @@ export function CaseStudies() {
           </p>
         </div>
 
-        <h2 className="mt-10 max-w-2xl text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
+        <h2 className="mt-10 max-w-2xl text-balance font-serif text-3xl font-normal leading-tight tracking-wide text-foreground sm:text-4xl">
           Dört protokolün seyri.
         </h2>
         <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">

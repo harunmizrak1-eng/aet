@@ -37,7 +37,7 @@ export function MethodAccess() {
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow-label">Erişim</p>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
             İki <span className="serif-accent">eşik</span> hâlinde erişim.
           </h2>
           <p className="max-w-md self-end text-base leading-relaxed text-muted-foreground">
@@ -48,7 +48,7 @@ export function MethodAccess() {
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Guest — light card */}
           <article className="flex flex-col rounded-xl border border-hairline bg-surface p-8 sm:p-12">
-            <h3 className="font-serif text-3xl font-light text-foreground">
+            <h3 className="font-serif text-3xl font-normal text-foreground">
               Misafir <span className="serif-accent">okur</span>
             </h3>
             <p className="mt-3 font-serif text-lg italic text-muted-foreground">
@@ -74,7 +74,7 @@ export function MethodAccess() {
 
           {/* Full member — dark card */}
           <article className="flex flex-col rounded-xl bg-[#20221d] p-8 text-[#f4f1ea] sm:p-12">
-            <h3 className="font-serif text-3xl font-light">
+            <h3 className="font-serif text-3xl font-normal">
               Tam <span className="serif-accent">üye</span>
             </h3>
             <p className="mt-3 font-serif text-lg italic text-[#f4f1ea]/70">

@@ -24,7 +24,7 @@ export function LongevityScoreForm() {
       <div className="mt-6 flex flex-col gap-10">
         {scoreDimensions.map((d) => (
           <div key={d.id}>
-            <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+            <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
               {d.question}
             </h2>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -83,7 +83,7 @@ export function LongevityScoreForm() {
             klinik model kullanılmaz.
           </p>
 
-          <p className="mt-6 max-w-lg text-balance font-serif text-lg font-light italic leading-relaxed text-foreground/90">
+          <p className="mt-6 max-w-lg text-balance font-serif text-lg font-normal italic leading-relaxed text-foreground/90">
             Bu bir tahmindir; tıbbi teşhis veya öngörü değildir.
           </p>
 

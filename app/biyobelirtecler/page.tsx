@@ -33,7 +33,7 @@ export default function BiomarkersPage() {
                 Sözlük
               </p>
             </div>
-            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               Biyobelirteç Sözlüğü
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -55,7 +55,7 @@ export default function BiomarkersPage() {
                 <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                   {b.category}
                 </p>
-                <h2 className="mt-2 font-serif text-2xl font-light tracking-wide text-foreground">
+                <h2 className="mt-2 font-serif text-2xl font-normal tracking-wide text-foreground">
                   {b.shortName}
                 </h2>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">

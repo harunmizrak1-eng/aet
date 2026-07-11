@@ -38,7 +38,7 @@ export function Hero() {
               ÆTERNA
             </p>
 
-            <h1 className="mt-6 max-w-2xl text-balance font-serif text-4xl font-light leading-[1.15] tracking-wide text-foreground sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-2xl text-balance font-serif text-4xl font-normal leading-[1.15] tracking-wide text-foreground sm:text-6xl lg:text-7xl">
               Uzun ömür için kişiye özel bir sistem.
             </h1>
 

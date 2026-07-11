@@ -45,7 +45,7 @@ export default function MethodologyPage() {
                 Metodoloji
               </p>
             </div>
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-10 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
               Kanıtı nasıl değerlendiriyoruz.
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -59,7 +59,7 @@ export default function MethodologyPage() {
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto flex max-w-2xl flex-col gap-16">
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 Kanıt nasıl sınıflandırılır
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -113,7 +113,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 Protokoller nasıl incelenir
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -126,7 +126,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 Neyi önermiyoruz
               </h2>
               <ul className="mt-4 flex flex-col gap-3">
@@ -146,7 +146,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 Çıkar çatışması beyanı
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -160,7 +160,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 Güncelleme ve inceleme politikası
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -170,7 +170,7 @@ export default function MethodologyPage() {
                 fark edildiğinde, sessizce düzeltmek yerine neyin
                 değiştiğini kayıt altına alırız.
               </p>
-              <p className="mt-6 text-[0.7rem] font-light leading-relaxed text-muted-foreground">
+              <p className="mt-6 text-[0.7rem] font-normal leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

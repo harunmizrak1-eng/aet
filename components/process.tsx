@@ -46,7 +46,7 @@ export function Process() {
               </span>
 
               <div className="relative">
-                <h3 className="font-serif text-2xl font-light tracking-wide text-foreground">
+                <h3 className="font-serif text-2xl font-normal tracking-wide text-foreground">
                   {step.title}
                 </h3>
                 <span

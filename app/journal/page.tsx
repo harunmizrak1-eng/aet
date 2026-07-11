@@ -32,7 +32,7 @@ export default function JournalPage() {
                 Journal
               </p>
             </div>
-            <h1 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               Yazılar
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">

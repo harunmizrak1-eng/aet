@@ -32,7 +32,7 @@ export default function LongevityScorePage() {
               </p>
             </div>
 
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-10 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
               Mevcut yörüngeniz nedir?
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">

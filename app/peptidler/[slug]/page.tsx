@@ -73,7 +73,7 @@ export default async function PeptideDetailPage({
             <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {peptide.category}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               {peptide.name}
             </h1>
 
@@ -213,7 +213,7 @@ export default async function PeptideDetailPage({
                 </h2>
                 <Link
                   href={`/journal/${relatedArticle.slug}`}
-                  className="mt-4 inline-block font-serif text-lg font-light italic text-foreground/90 transition-colors hover:text-gold"
+                  className="mt-4 inline-block font-serif text-lg font-normal italic text-foreground/90 transition-colors hover:text-gold"
                 >
                   {relatedArticle.title} →
                 </Link>
@@ -222,7 +222,7 @@ export default async function PeptideDetailPage({
 
             <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:items-center">
               <PeptideCta goal={goal} />
-              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.65rem] font-normal leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

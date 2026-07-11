@@ -10,7 +10,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
         Anonim Profil · {study.title}
       </p>
 
-      <h3 className="mt-3 font-serif text-2xl font-light tracking-wide text-foreground">
+      <h3 className="mt-3 font-serif text-2xl font-normal tracking-wide text-foreground">
         {study.title}
       </h3>
       <p className="mt-1 text-[0.7rem] uppercase tracking-eyebrow text-gold/90">
@@ -102,7 +102,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
         </table>
       </div>
 
-      <p className="mt-6 text-[0.65rem] font-light leading-relaxed text-muted-foreground">
+      <p className="mt-6 text-[0.65rem] font-normal leading-relaxed text-muted-foreground">
         {caseStudyDisclaimer}
       </p>
     </article>

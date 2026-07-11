@@ -271,7 +271,7 @@ function AssessmentDialog({
                 </p>
               </div>
 
-              <Dialog.Title className="mt-8 text-balance font-serif text-2xl font-light leading-snug tracking-wide text-foreground sm:text-3xl">
+              <Dialog.Title className="mt-8 text-balance font-serif text-2xl font-normal leading-snug tracking-wide text-foreground sm:text-3xl">
                 {current.label}
               </Dialog.Title>
 
@@ -310,15 +310,15 @@ function AssessmentDialog({
               <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
                 Kişisel Analiziniz
               </p>
-              <Dialog.Title className="mt-6 text-balance font-serif text-2xl font-light leading-snug tracking-wide text-foreground sm:text-3xl">
+              <Dialog.Title className="mt-6 text-balance font-serif text-2xl font-normal leading-snug tracking-wide text-foreground sm:text-3xl">
                 Önerilen başlangıç noktanız
               </Dialog.Title>
 
               <div className="mt-8 flex items-baseline gap-4 border border-gold/40 bg-gold/5 px-6 py-5 rounded-sm">
-                <span className="font-serif text-3xl font-light text-gold">
+                <span className="font-serif text-3xl font-normal text-gold">
                   {recommendedTier}
                 </span>
-                <span className="font-serif text-xl font-light text-foreground">
+                <span className="font-serif text-xl font-normal text-foreground">
                   {TIER_NAMES[recommendedTier]}
                 </span>
               </div>

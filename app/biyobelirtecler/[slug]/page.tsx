@@ -65,7 +65,7 @@ export default async function BiomarkerDetailPage({
             <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {biomarker.category}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               {biomarker.name}
             </h1>
 
@@ -88,7 +88,7 @@ export default async function BiomarkerDetailPage({
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <p className="text-[0.7rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.7rem] font-normal leading-relaxed text-muted-foreground">
                 {biomarker.note}
               </p>
             </div>

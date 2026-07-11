@@ -49,7 +49,7 @@ export default function FaqPage() {
                 Sık Sorulan Sorular
               </p>
             </div>
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-10 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
               Açık sorular, açık cevaplar.
             </h1>
           </div>
@@ -63,7 +63,7 @@ export default function FaqPage() {
                   key={item.question}
                   className="border-t border-hairline py-8 last:border-b"
                 >
-                  <dt className="font-serif text-xl font-light tracking-wide text-foreground">
+                  <dt className="font-serif text-xl font-normal tracking-wide text-foreground">
                     {item.question}
                   </dt>
                   <dd className="mt-4 text-sm leading-relaxed text-muted-foreground">

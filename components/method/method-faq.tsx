@@ -12,7 +12,7 @@ export function MethodFaq() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <div>
           <p className="eyebrow-label">SSS</p>
-          <h2 className="mt-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          <h2 className="mt-6 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
             Sorularınız, <span className="serif-accent">sabırla</span> yanıtlandı.
           </h2>
           <p className="mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
@@ -35,7 +35,7 @@ export function MethodFaq() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 py-6 text-left"
                 >
-                  <span className="font-serif text-xl font-light text-foreground sm:text-2xl">
+                  <span className="font-serif text-xl font-normal text-foreground sm:text-2xl">
                     {item.question}
                   </span>
                   <span

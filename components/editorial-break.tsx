@@ -47,7 +47,7 @@ export function EditorialBreak({
               {kicker}
             </p>
           )}
-          <p className="mt-4 max-w-xl text-balance font-serif text-3xl font-light leading-[1.2] tracking-wide text-foreground sm:text-4xl md:text-5xl">
+          <p className="mt-4 max-w-xl text-balance font-serif text-3xl font-normal leading-[1.2] tracking-wide text-foreground sm:text-4xl md:text-5xl">
             {line}
           </p>
         </div>

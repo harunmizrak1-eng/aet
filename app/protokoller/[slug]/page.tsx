@@ -69,7 +69,7 @@ export default async function ProtocolDetailPage({
             <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {protocol.tagline}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               {protocol.name}
             </h1>
 
@@ -113,7 +113,7 @@ export default async function ProtocolDetailPage({
                     className="group flex items-center justify-between gap-4 rounded-sm border border-hairline bg-surface p-5 transition-colors hover:border-gold/60"
                   >
                     <div>
-                      <p className="font-serif text-lg font-light tracking-wide text-foreground">
+                      <p className="font-serif text-lg font-normal tracking-wide text-foreground">
                         {p.name}
                       </p>
                       <p className="mt-1 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
@@ -168,7 +168,7 @@ export default async function ProtocolDetailPage({
                 goal={protocol.goal}
                 label="Bu Protokol İçin Değerlendirme Başlat"
               />
-              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.65rem] font-normal leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

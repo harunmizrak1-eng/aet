@@ -10,7 +10,7 @@ export function MethodEnroll() {
       <section className="bg-[#20221d] px-6 py-28 text-center text-[#f4f1ea] sm:py-40 md:px-10">
         <div className="mx-auto max-w-4xl">
           <p className="eyebrow-label">Şimdi kayıt alınıyor · 2026 Bahar dönemi</p>
-          <h2 className="mt-8 font-serif text-5xl font-light leading-[1.05] tracking-tight sm:text-7xl">
+          <h2 className="mt-8 font-serif text-5xl font-normal leading-[1.05] tracking-tight sm:text-7xl">
             Vücudunuzun size <span className="serif-accent">söylediği</span> dili
             öğrenin.
           </h2>

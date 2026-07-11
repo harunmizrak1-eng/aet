@@ -34,7 +34,7 @@ export default function PeptidlerPage() {
               </p>
             </div>
 
-            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-6xl">
               Peptid Kütüphanesi
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -66,7 +66,7 @@ export default function PeptidlerPage() {
 
         {/* CTA back to consulting */}
         <section className="px-6 pb-28 text-center sm:pb-36">
-          <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-light italic leading-relaxed text-foreground/90 sm:text-3xl">
+          <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-normal italic leading-relaxed text-foreground/90 sm:text-3xl">
             Hangi bileşiğin sizin için doğru olduğunu birlikte belirleriz.
           </p>
           <Link

@@ -8,7 +8,7 @@ export function MethodProtocols() {
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow-label">Protokoller</p>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
             Sözlükten <span className="serif-accent">sisteme</span>.
           </h2>
           <p className="max-w-md self-end text-base leading-relaxed text-muted-foreground">
@@ -26,7 +26,7 @@ export function MethodProtocols() {
               className="group flex flex-col rounded-xl border border-hairline bg-surface p-8 transition-colors hover:border-gold/50"
             >
               <p className="eyebrow-label">{tierLabel[p.tier]}</p>
-              <h3 className="mt-6 font-serif text-2xl font-light text-foreground">
+              <h3 className="mt-6 font-serif text-2xl font-normal text-foreground">
                 {p.name}
               </h3>
               <p className="mt-2 font-serif text-lg italic text-muted-foreground">

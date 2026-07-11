@@ -26,7 +26,7 @@ export function MethodManifesto() {
 
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+            <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
               Vücudunuzun zaten konuştuğu dilde bir{" "}
               <span className="serif-accent">eğitim</span>.
             </h2>
@@ -59,7 +59,7 @@ export function MethodManifesto() {
           {PRINCIPLES.map((p) => (
             <div key={p.numeral}>
               <p className="eyebrow-label">{p.numeral}</p>
-              <h3 className="mt-4 font-serif text-2xl font-light leading-tight text-foreground">
+              <h3 className="mt-4 font-serif text-2xl font-normal leading-tight text-foreground">
                 {p.title}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

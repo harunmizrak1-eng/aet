@@ -72,7 +72,7 @@ export function Offerings() {
           </p>
         </div>
 
-        <h2 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+        <h2 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-normal leading-tight tracking-wide text-foreground sm:text-5xl">
           Her seviyede, aynı hassasiyet.
         </h2>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -98,7 +98,7 @@ export function Offerings() {
               )}
 
               <div className="flex items-baseline gap-4">
-                <span className="font-serif text-3xl font-light text-gold">
+                <span className="font-serif text-3xl font-normal text-gold">
                   {t.tier}
                 </span>
                 {!t.featured && (
@@ -108,7 +108,7 @@ export function Offerings() {
                 )}
               </div>
 
-              <h3 className="mt-6 font-serif text-2xl font-light tracking-wide text-foreground sm:text-[1.7rem]">
+              <h3 className="mt-6 font-serif text-2xl font-normal tracking-wide text-foreground sm:text-[1.7rem]">
                 {t.name}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -164,7 +164,7 @@ export function Offerings() {
               href={`/protokoller/${p.slug}`}
               className="group flex flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
-              <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h3 className="font-serif text-xl font-normal tracking-wide text-foreground">
                 {p.name}
               </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">

@@ -88,7 +88,7 @@ export function MethodPillars() {
     <section id="odak" className="border-b border-hairline px-6 py-24 sm:py-32 md:px-10">
       <div className="mx-auto max-w-6xl">
         <p className="eyebrow-label">Odak Alanları</p>
-        <h2 className="mt-6 max-w-3xl font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+        <h2 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl">
           Hissettiğiniz <span className="serif-accent">şeyle</span> başlayın.
         </h2>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -110,7 +110,7 @@ export function MethodPillars() {
               </div>
               <p className="eyebrow-label mb-8 text-center">{p.underline}</p>
 
-              <h3 className="font-serif text-2xl font-light leading-tight text-foreground">
+              <h3 className="font-serif text-2xl font-normal leading-tight text-foreground">
                 {p.title}
               </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
