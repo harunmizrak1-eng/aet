@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { faqItems } from "@/lib/faq"
 
 const description =
@@ -86,7 +86,7 @@ export default function FaqPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

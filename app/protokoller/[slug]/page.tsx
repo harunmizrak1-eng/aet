@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { PeptideCta } from "@/components/peptide-cta"
 import { protocols, getProtocol } from "@/lib/protocols"
 import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
@@ -175,7 +175,7 @@ export default async function ProtocolDetailPage({
           </div>
         </article>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

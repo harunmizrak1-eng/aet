@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { biomarkers } from "@/lib/biomarkers"
 
 const description =
@@ -69,7 +69,7 @@ export default function BiomarkersPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

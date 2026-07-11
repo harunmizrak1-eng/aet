@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { biomarkers, getBiomarker } from "@/lib/biomarkers"
 import { getPeptide } from "@/lib/peptides"
 import { caseStudies } from "@/lib/case-studies"
@@ -127,7 +127,7 @@ export default async function BiomarkerDetailPage({
           </div>
         </article>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

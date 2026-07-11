@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { contactEmail } from "@/lib/contact"
 
 export const metadata: Metadata = {
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { JournalList } from "@/components/journal-list"
 import { articles } from "@/lib/articles"
 
@@ -49,7 +49,7 @@ export default function JournalPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

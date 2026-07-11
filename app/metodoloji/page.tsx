@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { tierLabel, tierDots, tierColorVar } from "@/lib/peptides"
 import { lastContentReview } from "@/lib/site"
 
@@ -177,7 +177,7 @@ export default function MethodologyPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }

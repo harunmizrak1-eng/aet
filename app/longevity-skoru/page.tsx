@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
+import { MethodFooter } from "@/components/method/method-footer"
 import { LongevityScoreForm } from "@/components/longevity-score-form"
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ export default function LongevityScorePage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MethodFooter />
     </>
   )
 }
