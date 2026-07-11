@@ -3,13 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ÆTERNA dark luxury theme */
+/* ÆTERNA method theme: warm ivory, terracotta, Cormorant + DM Sans. This is
+   the site's one fixed visual identity (per method's production design) —
+   do not reintroduce the old dark/gold palette. */
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter Fallback', sans-serif;
+  --font-sans: var(--font-dm-sans), 'DM Sans Fallback', sans-serif;
   --font-serif: var(--font-cormorant), 'Cormorant Garamond Fallback', serif;
   --font-heading: var(--font-cormorant), 'Cormorant Garamond Fallback', serif;
-  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono Fallback';
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -42,33 +44,33 @@
 }
 
 :root {
-  color-scheme: dark;
-  --background: #0a0a0a;
-  --foreground: #f0ede8;
-  --surface: #212121;
-  --gold: #c4a882;
-  --hairline: rgba(255, 255, 255, 0.07);
-  --tier-proven: #6faa80;
-  --tier-theoretical: #c4a882;
-  --tier-preclinical: #9a8f7d;
+  color-scheme: light;
+  --background: #f4f1ea;
+  --foreground: #1f221d;
+  --surface: #ffffff;
+  --gold: #8b4f2e;
+  --hairline: rgba(31, 34, 29, 0.1);
+  --tier-proven: #4b6e52;
+  --tier-theoretical: #8b4f2e;
+  --tier-preclinical: #6b6d60;
 
-  --card: #212121;
-  --card-foreground: #f0ede8;
-  --popover: #212121;
-  --popover-foreground: #f0ede8;
-  --primary: #c4a882;
-  --primary-foreground: #0a0a0a;
-  --secondary: #212121;
-  --secondary-foreground: #f0ede8;
-  --muted: #212121;
-  --muted-foreground: rgba(240, 237, 232, 0.7);
-  --accent: #c4a882;
-  --accent-foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #1f221d;
+  --popover: #ffffff;
+  --popover-foreground: #1f221d;
+  --primary: #8b4f2e;
+  --primary-foreground: #f4f1ea;
+  --secondary: #ece7dc;
+  --secondary-foreground: #1f221d;
+  --muted: #ece7dc;
+  --muted-foreground: rgba(31, 34, 29, 0.66);
+  --accent: #8b4f2e;
+  --accent-foreground: #f4f1ea;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(255, 255, 255, 0.07);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #c4a882;
-  --radius: 0.25rem;
+  --border: rgba(31, 34, 29, 0.1);
+  --input: rgba(31, 34, 29, 0.14);
+  --ring: #8b4f2e;
+  --radius: 0.85rem;
 }
 
 @layer base {
@@ -132,8 +134,8 @@ body::before {
    quiet, campaign-like tone instead of reading as ordinary stock imagery.
    Desaturated, warmed toward the brand gold, deepened contrast. */
 .editorial-photo {
-  filter: grayscale(0.55) sepia(0.18) saturate(1.05) contrast(1.05)
-    brightness(0.92);
+  filter: grayscale(0.3) sepia(0.14) saturate(1.05) contrast(1.02)
+    brightness(1.03);
 }
 
 /* ÆTERNA signature motion: a barely-visible, slow-pulsing line chart in the

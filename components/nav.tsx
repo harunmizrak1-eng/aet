@@ -2,18 +2,19 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useAssessment } from "@/components/assessment"
 
 const LINKS = [
-  { href: "/#kategoriler", label: "Odak Alanları" },
-  { href: "/peptidler", label: "Peptid Kütüphanesi" },
+  { href: "/#danismanlik", label: "Protokoller" },
+  { href: "/peptidler", label: "Monograflar" },
   { href: "/journal", label: "Journal" },
+  { href: "/metodoloji", label: "Hakkımızda" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
-  { href: "/metodoloji", label: "Metodoloji" },
-  { href: "/#danismanlik", label: "Danışmanlık" },
 ]
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  const { open: openAssessment } = useAssessment()
 
   useEffect(() => {
     if (!open) return
@@ -29,21 +30,20 @@ export function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <Link
           href="/"
-          className="font-serif text-lg tracking-wordmark text-foreground transition-opacity hover:opacity-70"
+          className="flex items-baseline gap-1.5 font-serif text-xl text-foreground transition-opacity hover:opacity-70"
           onClick={() => setOpen(false)}
         >
-          ÆTERNA
+          Æterna
+          <em className="font-serif text-xl italic text-gold">method</em>
         </Link>
 
-        <div className="hidden items-center gap-8 sm:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground ${
-                link.label === "Longevity Skoru" || link.label === "Metodoloji"
-                  ? "hidden lg:inline"
-                  : ""
+              className={`text-sm text-muted-foreground transition-colors hover:text-foreground ${
+                link.label === "Longevity Skoru" ? "hidden xl:inline" : ""
               }`}
             >
               {link.label}
@@ -51,20 +51,30 @@ export function Nav() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-nav-panel"
-          className="text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground sm:hidden"
-        >
-          {open ? "Kapat" : "Menü"}
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={() => openAssessment()}
+            className="hidden rounded-full border border-hairline px-5 py-2 text-sm text-foreground transition-colors hover:border-gold/50 hover:text-gold sm:inline-block"
+          >
+            Başvur
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-nav-panel"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground lg:hidden"
+          >
+            {open ? "Kapat" : "Menü"}
+          </button>
+        </div>
       </nav>
 
       <div
         id="mobile-nav-panel"
-        className={`overflow-hidden border-t border-hairline transition-[max-height] duration-300 ease-in-out sm:hidden ${
+        className={`overflow-hidden border-t border-hairline transition-[max-height] duration-300 ease-in-out lg:hidden ${
           open ? "max-h-96" : "max-h-0 border-t-0"
         }`}
       >

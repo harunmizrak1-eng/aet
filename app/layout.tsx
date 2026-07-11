@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Geist_Mono, Inter } from 'next/font/google'
+import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { AssessmentProvider } from '@/components/assessment'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { contactEmail } from '@/lib/contact'
@@ -13,14 +13,14 @@ const cormorant = Cormorant_Garamond({
   style: ['normal', 'italic'],
 })
 
-const inter = Inter({
-  variable: '--font-inter',
+const dmSans = DM_Sans({
+  variable: '--font-dm-sans',
   subsets: ['latin'],
   weight: ['300', '400', '500'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
   weight: ['400', '500'],
 })
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#0A0A0A',
+  colorScheme: 'light',
+  themeColor: '#F4F1EA',
 }
 
 export default function RootLayout({
@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${cormorant.variable} ${inter.variable} ${geistMono.variable} bg-background`}
+      className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         <script

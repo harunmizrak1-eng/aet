@@ -2,7 +2,7 @@ import { contactEmail, instagramUrl } from "@/lib/contact"
 
 const EXPLORE_LINKS = [
   { href: "/#kategoriler", label: "Odak Alanları" },
-  { href: "/peptidler", label: "Peptid Kütüphanesi" },
+  { href: "/peptidler", label: "Monograflar" },
   { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/journal", label: "Journal" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
@@ -65,8 +65,9 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-14">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 sm:gap-8">
           <div>
-            <p className="font-serif text-lg tracking-wordmark text-foreground">
-              ÆTERNA
+            <p className="flex items-baseline gap-1.5 font-serif text-lg text-foreground">
+              Æterna
+              <em className="italic text-gold">method</em>
             </p>
             <p className="mt-4 max-w-[16ch] text-[0.7rem] leading-relaxed text-muted-foreground">
               Hassas Biyoloji. Özel Erişim.
