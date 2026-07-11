@@ -1,62 +1,52 @@
-import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
-import { ResearchMetrics } from "@/components/research-metrics"
-import { WhyAeterna } from "@/components/why-aeterna"
-import { Categories } from "@/components/categories"
-import { Idea } from "@/components/idea"
+import { MethodHero } from "@/components/method/method-hero"
+import { MethodMarquee } from "@/components/method/method-marquee"
+import { MethodManifesto } from "@/components/method/method-manifesto"
+import { MethodPillars } from "@/components/method/method-pillars"
+import { MethodLibrary } from "@/components/method/method-library"
+import { MethodScience } from "@/components/method/method-science"
 import { Process } from "@/components/process"
-import { Offerings } from "@/components/offerings"
-import { Trust } from "@/components/trust"
+import { MethodProtocols } from "@/components/method/method-protocols"
 import { CaseStudies } from "@/components/case-studies"
-import { FinalCta } from "@/components/final-cta"
-import { Footer } from "@/components/footer"
+import { MethodJournal } from "@/components/method/method-journal"
+import { MethodAccess } from "@/components/method/method-access"
+import { MethodFaq } from "@/components/method/method-faq"
+import { MethodEnroll } from "@/components/method/method-enroll"
+import { MethodFooter } from "@/components/method/method-footer"
 import { Reveal } from "@/components/reveal"
-import { EditorialBreak } from "@/components/editorial-break"
 
 export default function Page() {
   return (
     <main id="main-content" className="bg-background">
       <Nav />
-      <Hero />
-      <ResearchMetrics />
+      <MethodHero />
+      <MethodMarquee />
       <Reveal>
-        <WhyAeterna />
+        <MethodManifesto />
       </Reveal>
       <Reveal>
-        <Categories />
+        <MethodPillars />
       </Reveal>
+      <MethodLibrary />
       <Reveal>
-        <Idea />
+        <MethodScience />
       </Reveal>
-      <EditorialBreak
-        src="/images/editorial/eye-macro.webp"
-        focus="60% 40%"
-        kicker="Felsefe"
-        line="Bilgi, reçeteden önce gelir."
-      />
       <Reveal>
         <Process />
       </Reveal>
       <Reveal>
-        <Offerings />
-      </Reveal>
-      <EditorialBreak
-        src="/images/editorial/sprint-dust.webp"
-        focus="50% 35%"
-        align="left"
-        kicker="Vaka Analizlerinden Önce"
-        line="Her protokolün arkasında, gerçek bir biyoloji vardır."
-      />
-      <Reveal>
-        <Trust />
+        <MethodProtocols />
       </Reveal>
       <Reveal>
         <CaseStudies />
       </Reveal>
       <Reveal>
-        <FinalCta />
+        <MethodJournal />
       </Reveal>
-      <Footer />
+      <MethodAccess />
+      <MethodFaq />
+      <MethodEnroll />
+      <MethodFooter />
     </main>
   )
 }

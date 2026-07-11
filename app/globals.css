@@ -21,6 +21,11 @@
   --color-tier-proven: var(--tier-proven);
   --color-tier-theoretical: var(--tier-theoretical);
   --color-tier-preclinical: var(--tier-preclinical);
+  --color-band: var(--band);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-serif-accent: var(--serif-accent);
+  --color-eyebrow: var(--eyebrow);
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -53,6 +58,13 @@
   --tier-proven: #4b6e52;
   --tier-theoretical: #8b4f2e;
   --tier-preclinical: #6b6d60;
+
+  /* Method-specific editorial tokens */
+  --band: #ece7dc; /* warmer ivory band between white sections */
+  --ink: #20221d; /* near-black olive for dark sections */
+  --ink-foreground: #f4f1ea;
+  --serif-accent: #8b6f4e; /* warm brown for italic keywords in headlines */
+  --eyebrow: #6b7566; /* muted olive for small mono labels */
 
   --card: #ffffff;
   --card-foreground: #1f221d;
@@ -127,6 +139,48 @@ body::before {
   }
   .tracking-eyebrow {
     letter-spacing: 0.3em;
+  }
+  /* Method signature eyebrow: tiny olive mono label (THE METHOD, PILLARS…) */
+  .eyebrow-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #6b7566;
+  }
+  /* Method signature headline accent: warm-brown italic keyword */
+  .serif-accent {
+    font-style: italic;
+    color: #8b6f4e;
+  }
+}
+
+/* Method wordmark lockup: "Æterna" roman + "method" italic */
+.wordmark {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+.wordmark em {
+  font-style: italic;
+}
+
+/* Horizontal marquee (concern words in the strip below the hero) */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
