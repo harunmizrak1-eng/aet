@@ -31,7 +31,7 @@ export const monographCategories = [
 const N: Record<string, undefined> = {}
 void N
 
-export const monographs: Monograph[] = [
+const rawMonographs: Monograph[] = [
   // ——— Metabolik & Kilo ———
   {
     slug: "retatrutide",
@@ -973,8 +973,8 @@ export const monographs: Monograph[] = [
     classification: "Sulandırma Çözücüsü · Bakteriyostatik",
     summary:
       "Her sulandırılmış peptidi mümkün kılan evrensel taşıyıcı; iyi anlaşılmış tek bir antimikrobiyal mekanizmayla çok sayıda çekişte sterilliği korur.",
-    sequence: "—",
-    halfLife: "—",
+    sequence: "Peptid değil",
+    halfLife: "Geçerli değil",
     route: "Subkütan / İntramusküler / İntranazal",
   },
   {
@@ -985,11 +985,19 @@ export const monographs: Monograph[] = [
     classification: "Çözücü · Sulandırma Ortamı",
     summary:
       "Her sulandırılmış peptid protokolünün moleküler temel durumu. Tasarım gereği inert, gereklilik gereği vazgeçilmez ve yalnızca onu tutan eller kadar hassas.",
-    sequence: "—",
-    halfLife: "—",
+    sequence: "Peptid değil",
+    halfLife: "Geçerli değil",
     route: "Sulandırma / Enjeksiyon",
   },
 ]
+
+// The scraped source numbers were not unique per entry, so we assign each
+// monograph a stable sequential catalogue number in curated display order,
+// mirroring Method's numbered lexicon (No 001 to No 078).
+export const monographs: Monograph[] = rawMonographs.map((m, i) => ({
+  ...m,
+  number: String(i + 1).padStart(3, "0"),
+}))
 
 export function getMonograph(slug: string): Monograph | undefined {
   return monographs.find(
