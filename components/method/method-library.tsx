@@ -2,58 +2,32 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { peptides, tierLabel } from "@/lib/peptides"
+import {
+  monographCategories,
+  monographsByCategory,
+} from "@/lib/monographs"
 
-// Method's "library" categories, mapped onto Protocol's real peptide taxonomy.
-const CATEGORIES: { key: string; label: string; blurb: string }[] = [
-  {
-    key: "Metabolik",
-    label: "Metabolik & kilo",
-    blurb:
-      "İştah, insülin duyarlılığı ve yağ metabolizması için çalışılan peptidler. Ana akım tıpla en çok örtüşen ve en hızlı değişen kategori.",
-  },
-  {
-    key: "Doku Onarımı",
-    label: "İyileşme & onarım",
-    blurb:
-      "Tendon, eklem ve kas dokusunun onarımı, inflamasyon modülasyonu ve toparlanma kaskadı üzerine çalışan bileşikler.",
-  },
-  {
-    key: "Kognitif",
-    label: "Beyin & nootropikler",
-    blurb:
-      "Odak, hafıza ve zihinsel netlik için incelenen nöropeptidler. Sinaptik plastisite ve nörogenez temelli yaklaşım.",
-  },
-  {
-    key: "Longevity",
-    label: "Uzun ömür & hücresel",
-    blurb:
-      "Hücresel sağlık, sirkadiyen ritim ve sağlıklı yaşlanma için uzun vadeli sinyalleşmeye odaklanan moleküller.",
-  },
-  {
-    key: "Büyüme / GH",
-    label: "Uzun ömür & GH desteği",
-    blurb:
-      "GHRH / GH aksı ve pulsatil salınım üzerinden çalışan büyüme hormonu destekleyici peptidler.",
-  },
-  {
-    key: "Estetik / Onarım",
-    label: "Cilt & estetik",
-    blurb:
-      "Kolajen sentezi, cilt kalitesi ve doku onarımı üzerine çalışan estetik odaklı bileşikler.",
-  },
-  {
-    key: "Performans",
-    label: "Performans & enerji",
-    blurb:
-      "Antrenman adaptasyonu, toparlanma süresi ve günlük enerji kapasitesi için hazırlanan peptidler.",
-  },
-]
+// Short blurb per monograph category for the dark library rail.
+const BLURB: Record<string, string> = {
+  "Metabolik & Kilo":
+    "İştah, insülin duyarlılığı ve yağ metabolizması için çalışılan bileşikler. Ana akım tıpla en çok örtüşen ve en hızlı değişen kategori.",
+  "İyileşme & Onarım":
+    "Tendon, eklem ve kas dokusunun onarımı, inflamasyon modülasyonu ve toparlanma kaskadı üzerine çalışan peptidler.",
+  "Beyin & Nootropikler":
+    "Odak, hafıza ve zihinsel netlik için incelenen nöropeptidler. Sinaptik plastisite ve nörogenez temelli yaklaşım.",
+  "Hormonal & Üreme":
+    "Hipotalamus–hipofiz–gonad ekseni ve üreme sinyalleşmesi üzerine çalışan bileşikler.",
+  "Uzun Ömür & GH Desteği":
+    "GHRH / GH aksı, mitokondriyal işlev ve hücresel uzun ömür üzerine çalışan moleküller.",
+  "Cilt & Estetik":
+    "Kolajen sentezi, pigmentasyon ve cilt kalitesi üzerine çalışan estetik odaklı bileşikler.",
+  "Genel Sağlık":
+    "Bağışıklık, redoks dengesi, uyku ve temel metabolik işlev için çalışılan endojen sinyaller.",
+}
 
 export function MethodLibrary() {
-  const [active, setActive] = useState(CATEGORIES[0].key)
-  const activeCat = CATEGORIES.find((c) => c.key === active)!
-  const list = peptides.filter((p) => p.category === active)
+  const [active, setActive] = useState<string>(monographCategories[0])
+  const list = monographsByCategory(active)
 
   return (
     <section id="kutuphane" className="bg-[#20221d] px-6 py-24 text-[#f4f1ea] sm:py-32 md:px-10">
@@ -65,55 +39,53 @@ export function MethodLibrary() {
             <span className="serif-accent">sözlük</span>.
           </h2>
           <p className="max-w-md self-end text-base leading-relaxed text-[#f4f1ea]/70">
-            Her kayıt molekülü sade bir dille sunar: nedir, nerede keşfedildi,
-            ne çalışıldı ve ne belirsiz kalıyor. Hiçbir şey vaat etmeyiz, ama
+            78 monograf. Her kayıt molekülü sade bir dille sunar: nedir, nasıl
+            sınıflandırılır ve ne belirsiz kalıyor. Hiçbir şey vaat etmeyiz, ama
             her şeyi anlamanız için çeviririz.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[240px_1fr] lg:gap-16">
+        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
           {/* Category rail */}
           <div className="flex flex-col">
-            {CATEGORIES.map((c) => (
+            {monographCategories.map((c) => (
               <button
-                key={c.key}
+                key={c}
                 type="button"
-                onClick={() => setActive(c.key)}
+                onClick={() => setActive(c)}
                 className={`border-b border-[#f4f1ea]/15 py-4 text-left font-serif text-xl italic transition-colors ${
-                  active === c.key
+                  active === c
                     ? "text-[#f4f1ea]"
                     : "text-[#f4f1ea]/40 hover:text-[#f4f1ea]/70"
                 }`}
               >
-                {c.label}
+                {c}
               </button>
             ))}
           </div>
 
-          {/* Peptide table */}
+          {/* Monograph table */}
           <div>
-            <h3 className="font-serif text-3xl font-normal">{activeCat.label}</h3>
+            <h3 className="font-serif text-3xl font-normal">{active}</h3>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#f4f1ea]/60">
-              {activeCat.blurb}
+              {BLURB[active]}
             </p>
 
             <ul className="mt-8">
-              {list.map((p, i) => (
-                <li key={p.slug} className="border-t border-[#f4f1ea]/15 last:border-b">
+              {list.map((m) => (
+                <li key={m.slug} className="border-t border-[#f4f1ea]/15 last:border-b">
                   <Link
-                    href={`/peptidler/${p.slug}`}
-                    className="group grid grid-cols-[2rem_1fr] items-baseline gap-4 py-5 sm:grid-cols-[2.5rem_11rem_1fr]"
+                    href={`/peptidler/${m.slug}`}
+                    className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-4 py-5 sm:grid-cols-[3rem_12rem_1fr]"
                   >
                     <span className="font-mono text-xs text-[#f4f1ea]/40">
-                      {String(i + 1).padStart(2, "0")}
+                      {m.number}
                     </span>
                     <span className="font-serif text-xl underline decoration-[#f4f1ea]/25 underline-offset-4 transition-colors group-hover:decoration-[#f4f1ea]">
-                      {p.name}
+                      {m.name}
                     </span>
-                    <span className="col-span-2 text-sm text-[#f4f1ea]/60 sm:col-span-1">
-                      {tierLabel[p.tier]}
-                      <span className="text-[#f4f1ea]/30"> · </span>
-                      {p.category}
+                    <span className="col-span-2 text-sm text-[#f4f1ea]/55 sm:col-span-1">
+                      {m.classification}
                     </span>
                   </Link>
                 </li>
