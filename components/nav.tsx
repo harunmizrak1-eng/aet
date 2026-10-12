@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/journal", label: "Derleme" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
   { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
+  { href: "/sulandirma-hesaplayici", label: "Sulandırma Hesaplayıcısı" },
   { href: "/metodoloji", label: "Hakkımızda" },
 ]
 

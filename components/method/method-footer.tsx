@@ -13,6 +13,7 @@ const LIBRARY_LINKS = [
   { href: "/#protokoller", label: "Protokoller" },
   { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
+  { href: "/sulandirma-hesaplayici", label: "Sulandırma Hesaplayıcısı" },
 ]
 
 const LEGAL_LINKS = [

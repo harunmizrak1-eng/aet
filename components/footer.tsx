@@ -6,6 +6,7 @@ const EXPLORE_LINKS = [
   { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/journal", label: "Journal" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
+  { href: "/sulandirma-hesaplayici", label: "Sulandırma Hesaplayıcısı" },
 ]
 
 const CONSULT_LINKS = [
