@@ -12,6 +12,7 @@ interface PeptideDbEntry {
   sideEffects?: string[]
   interactions?: { compound: string; note: string }[]
   pubmed?: string[]
+  identifiers?: { pubchem: number; formula?: string | null; cas?: string }
 }
 
 const db = peptideDb as unknown as Record<string, PeptideDbEntry>
@@ -68,6 +69,38 @@ export function PeptideDbSections({ slug }: { slug: string }) {
                 <dd className="mt-2 text-sm leading-relaxed text-foreground/90">{v}</dd>
               </div>
             ))}
+          </dl>
+        </Block>
+      )}
+
+      {e.identifiers && (
+        <Block title="Kimlik Bilgileri">
+          <dl className="mt-4 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-3">
+            {e.identifiers.formula && (
+              <div className="bg-background p-5">
+                <dt className="eyebrow-label">Molekül Formülü</dt>
+                <dd className="mt-2 font-mono text-sm text-foreground/90">{e.identifiers.formula}</dd>
+              </div>
+            )}
+            {e.identifiers.cas && (
+              <div className="bg-background p-5">
+                <dt className="eyebrow-label">CAS No</dt>
+                <dd className="mt-2 font-mono text-sm text-foreground/90">{e.identifiers.cas}</dd>
+              </div>
+            )}
+            <div className="bg-background p-5">
+              <dt className="eyebrow-label">PubChem</dt>
+              <dd className="mt-2 font-mono text-sm">
+                <a
+                  href={`https://pubchem.ncbi.nlm.nih.gov/compound/${e.identifiers.pubchem}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:opacity-70"
+                >
+                  CID {e.identifiers.pubchem} →
+                </a>
+              </dd>
+            </div>
           </dl>
         </Block>
       )}
