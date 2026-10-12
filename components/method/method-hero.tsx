@@ -1,24 +1,43 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { useAssessment } from "@/components/assessment"
 
 export function MethodHero() {
   const { open } = useAssessment()
+  // Respect reduced-motion: show the still poster instead of looping video.
+  const [reduceMotion, setReduceMotion] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    setReduceMotion(mq.matches)
+    const onChange = () => setReduceMotion(mq.matches)
+    mq.addEventListener("change", onChange)
+    return () => mq.removeEventListener("change", onChange)
+  }, [])
 
   return (
     <section className="relative flex h-screen min-h-[640px] w-full items-center justify-center overflow-hidden">
       {/* Background video */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        playsInline
-        loop
-        poster="/images/editorial/eye-macro.webp"
-        aria-hidden="true"
-      >
-        <source src="/videos/aeterna-bg.mp4" type="video/mp4" />
-      </video>
+      {reduceMotion ? (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/images/editorial/eye-macro.webp)" }}
+        />
+      ) : (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="metadata"
+          poster="/images/editorial/eye-macro.webp"
+          aria-hidden="true"
+        >
+          <source src="/videos/aeterna-bg.mp4" type="video/mp4" />
+        </video>
+      )}
       {/* Dark cinematic overlay so the editorial type reads white, as on
           aeternamethod.com's own hero */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#20221d]/55 via-[#20221d]/45 to-[#20221d]/75" />

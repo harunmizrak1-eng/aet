@@ -101,13 +101,24 @@
   button:focus-visible,
   a:focus-visible,
   [role="button"]:focus-visible,
-  input:focus-visible {
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
   }
 }
 
 /* Ultra-subtle film grain; lifts flat black into "printed catalogue" feel */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 body::before {
   content: "";
   position: fixed;
@@ -253,6 +264,10 @@ body::before {
   .marquee {
     animation: none;
   }
+}
+/* Let readers pause the strip to read a word. */
+.marquee:hover {
+  animation-play-state: paused;
 }
 @keyframes marquee-scroll {
   from {

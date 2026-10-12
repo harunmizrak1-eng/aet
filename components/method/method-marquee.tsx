@@ -18,7 +18,13 @@ export function MethodMarquee() {
     <div className="overflow-hidden border-y border-hairline bg-background py-6">
       <div className="marquee flex w-max flex-nowrap items-center">
         {items.map((c, i) => (
-          <div key={i} className="flex flex-none items-center">
+          <div
+            key={i}
+            // the second copy only exists for the seamless loop; hide it from
+            // assistive tech so each word is announced once
+            aria-hidden={i >= CONCERNS.length ? true : undefined}
+            className="flex flex-none items-center"
+          >
             <span className="whitespace-nowrap px-8 font-serif text-2xl italic text-foreground/80 sm:text-3xl">
               {c}
             </span>

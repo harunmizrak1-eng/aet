@@ -10,7 +10,8 @@ import { monographs, getMonograph } from "@/lib/monographs"
 import { peptideImage } from "@/lib/peptide-images"
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
-import { contactEmail, whatsappLink } from "@/lib/contact"
+import { PeptideDbSections } from "@/components/peptidedb-sections"
+import { whatsappLink } from "@/lib/contact"
 
 export function generateStaticParams() {
   const params: { slug: string }[] = []
@@ -182,26 +183,7 @@ export default async function MonographPage({
               </>
             )}
 
-            {/* Member gate */}
-            <div className="mt-12 rounded-2xl bg-[#20221d] p-8 text-[#f4f1ea] sm:p-10">
-              <p className="eyebrow-label">Üye erişimi</p>
-              <p className="mt-4 font-serif text-2xl font-normal leading-snug">
-                Tam monograf yalnızca <span className="serif-accent">üyelere</span> açıktır.
-              </p>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#f4f1ea]/70">
-                Eksiksiz dozaj rehberleri, titrasyon takvimleri, tedarik listeleri
-                ve klinik izlem protokolleri yalnızca doğrulanmış ÆTERNA üyelerine
-                sunulur. Okuma üyeliği herkese ücretsizdir.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/uye" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f4f1ea] px-6 py-3 text-sm text-[#20221d] transition-opacity hover:opacity-85">
-                  Ücretsiz üye ol
-                </Link>
-                <a href={`mailto:${contactEmail}`} className="inline-flex items-center justify-center rounded-full border border-[#f4f1ea]/30 px-6 py-3 text-sm text-[#f4f1ea] transition-colors hover:border-[#f4f1ea]/70">
-                  İletişim
-                </a>
-              </div>
-            </div>
+            <PeptideDbSections slug={mono.slug} />
 
             {peptide && (
               <div className="mt-12 border-t border-hairline pt-10">
